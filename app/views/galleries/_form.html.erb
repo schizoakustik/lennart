@@ -1,0 +1,22 @@
+<%= form_for @gallery do |f| %>
+<div class="row">
+  <div class="large-6 columns">
+    <%= f.text_field :name, :placeholder => 'gallery name' %>
+    <%= f.text_field :description, :placeholder => 'description' %>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 columns">
+    <%= f.label :pictures %>
+    <%= file_field_tag "images[]", type: :file, multiple: true %>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 columns">
+    <%= f.submit nil, :class => 'button small radius' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  galleries_path, :class => 'button small radius' %>
+  </div>
+</div>
+<% end %>
+  
