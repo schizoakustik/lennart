@@ -47,22 +47,26 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    @picture = Picture.new(params[:picture])
-
-    if @picture.save
-      respond_to do |format|
-        format.html {
-          render :json => [@picture.to_jq_upload].to_json,
-          :content_type => 'text/html',
-          :layout => false
-        }
-        format.json {
-          render :json => [@picture.to_jq_upload].to_json
-        }
-      end
-    else
-      render :json => [{:error => "custom_failure"}], :status => 304
-    end
+    @picture = Picture.new(picture_params)
+    @picture.save
+    
+#    Rails.logger.debug "DEBUG_PICTURES_CONTROLLER: " + params[:picture].inspect
+    
+#    if @picture.save
+#      respond_to do |format|
+#        format.html {
+#          render :json => [@picture.to_jq_upload].to_json,
+#          :content_type => 'text/html',
+#          :layout => false
+#        }
+#        format.json {
+#          render :json => [@picture.to_jq_upload].to_json
+#        #  Rails.logger.debug [@picture.to_jq_upload].to_json
+#        }
+#      end
+#    else
+#      render :json => [{:error => "custom_failure"}], :status => 304
+#    end
   end
 
   # PUT /pictures/1

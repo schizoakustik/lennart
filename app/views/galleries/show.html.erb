@@ -1,0 +1,12 @@
+<h3>
+  <%= @gallery.name %>
+</h3>
+<h3 class="subheader">
+  <%= @gallery.description %>
+</h3>
+
+<% @pictures.each do |picture| %>
+<%= image_tag (picture.image.thumb) %>
+<% end %>
+
+<%= link_to "new gallery", new_gallery_path, :class => 'button small radius' %>

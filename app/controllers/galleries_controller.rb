@@ -42,21 +42,28 @@ class GalleriesController < ApplicationController
   def create
     @gallery = Gallery.new(gallery_params)
     
-    respond_to do |format|
+#    respond_to do |format|
       if @gallery.save
         
         if params[:images]
           params[:images].each { |image|
             @gallery.pictures.create(image: image)
+            Rails.logger.debug "DEBUG_GALLERIES_CONTROLLER: " + params[:images].inspect
             }
         end
-        
-        format.html { redirect_to @gallery, notice: 'gallery was successfully created.' }
-        format.json { render json: @gallery, status: :created, location: @gallery }
+        flash[:notice] = "successfully created gallery."
+        redirect_to @gallery
       else
-        format.html { render action 'new' }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
+        flash.now[:alert] = "something went wrong."
+        render 'new'
+        
+#        format.html { redirect_to @gallery, notice: 'gallery was successfully created.' }
+#         format.json { render json: @gallery, status: :created, location: @gallery }
+#      else
+#        format.html { render action 'new' }
+#        format.json { render json: @gallery.errors, status: :unprocessable_entity }
+#      end
+        
     end
   end
   
