@@ -1,3 +1,79 @@
 // Place all the styles related to the galleries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.gallery-img {
+          box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);
+          border-bottom:2px solid #fff;
+          border-right:2px solid #fff;
+          margin:auto;
+          border-radius:5px;
+          overflow:hidden;
+}
+
+/* Other container */
+.contentContainer {
+  position:absolute;
+  left:25%;
+    top:25%;
+    background:#888;
+    color:#fff;
+    font-family:sans-serif;
+    padding:20px;
+    margin-bottom:0px;
+    border-radius:5px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    opacity:0.9;
+}
+
+/* Center my loader */
+#maximage {
+    display:none;
+}
+
+/*I want to style my pager*/
+#cycle-nav {
+    float:left;
+    margin-bottom:20px;
+}
+#cycle-nav ul {
+    list-style-type:none;
+}
+#cycle-nav ul li {
+    border:1px solid #ffffcc;
+    float:left;
+    margin:4px;
+    height:41px;
+}
+#cycle-nav ul li a {
+    float:left;
+    margin:2px;
+    width:50px;
+}
+#cycle-nav ul li.activeSlide {
+    border:1px solid #FF8000;
+}
+
+#menu-small {
+  display:none;
+  position:absolute;
+  bottom:0;
+}
+
+/* Overwrite Maximage's default background-size */
+div.mc-image {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Other random styles */
+#arrow_left, #arrow_right {text-decoration:none;}
+a {color:#fff;}
+a:hover {text-decoration:none;}
+a:active {color:#999;}
+hr {clear:both;}
+p {margin-bottom:20px;}
+.largeTxt {font-size:30px;}

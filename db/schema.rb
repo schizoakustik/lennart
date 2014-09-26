@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924062222) do
+ActiveRecord::Schema.define(version: 20140925065857) do
 
   create_table "galleries", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140924062222) do
     t.string   "name"
     t.string   "description"
     t.string   "cover"
+    t.integer  "user_id"
   end
 
   create_table "photos", force: true do |t|

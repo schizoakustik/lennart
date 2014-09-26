@@ -11,7 +11,11 @@
   <tr>
     <td><%= u.id %></td>
     <td><%= link_to u.name, user_path(u) %></td>
-    <td><%= link_to '&times;'.html_safe, user_path(u), method: :delete %></td>
+    <td>
+      
+        <%= link_to ''.html_safe, user_path(u), method: :delete, :class => 'ui-icon ui-icon-trash' %>
+      
+    </td>
   </tr>
   <% end %>
 </table>

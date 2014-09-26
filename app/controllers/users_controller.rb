@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @gallery = @user.galleries
   end
   
   def destroy

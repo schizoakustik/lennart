@@ -25,6 +25,9 @@ class GalleriesController < ApplicationController
   end
   
   def new
+#    user = User.find(params[:user_id])
+#    @gallery = @user.galleries.build(user: user)
+ 
     @gallery = Gallery.new
     
     respond_to do |format|
@@ -84,11 +87,13 @@ class GalleriesController < ApplicationController
     def destroy
       @gallery = Gallery.find(params[:id])
       @gallery.destroy
-      
-      respond_to do |format|
-        format.html { redirect_to galleries_url }
-        format.json { head :no_content }
-      end
+      redirect_to galleries_path
+      flash[:notice] = "deleted gallery #{@gallery.name}"
+            
+#      respond_to do |format|
+#        format.html { redirect_to galleries_url }
+#        format.json { head :no_content }
+#      end
     end
       
   private

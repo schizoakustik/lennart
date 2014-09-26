@@ -1,0 +1,30 @@
+<h3 class="subclass">
+  galleries
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th>
+        name
+      </th>
+      <th>
+        description
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @galleries.each do |gallery| %>
+  <tr>
+    <td>
+      <%= link_to gallery.name, gallery_path(gallery) %>
+    </td>
+    <td>
+      <%= gallery.description %>
+    </td>
+    <td>
+      <%= link_to ''.html_safe, gallery_path(gallery), method: :delete, class: 'ui-icon ui-icon-trash' %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "new gallery", new_gallery_path, :class => 'button small radius' %>
