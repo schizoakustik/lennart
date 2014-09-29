@@ -8,10 +8,10 @@
   
   <% end %>
 </div>
-<%= render 'thumb_menu' %>
-<div id="menu-small">
-  <a href="#" class="ui-icon ui-icon-extlink">
-</div>
+
+
+<%= link_to '', galleries_path, class: "ui-icon ui-icon-arrowthick-1-w" %>
+
   
 <script type="text/javascript" charset="utf-8">
   
@@ -38,10 +38,6 @@ $(function() {
       $('.contentContainer').hide( "drop", { direction: "down" }, "fast" );
       
     });
-  
-  $('#menu-small').click(function(){
-    $('.contentContainer').show( "drop", { direction: "up" }, "fast" );
-  });
   
 });
 </script>

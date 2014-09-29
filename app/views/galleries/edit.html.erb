@@ -1,27 +1,31 @@
-<h3 class="subheader">add photos to <%= @gallery.name %></h3>
-
-<%= form_for @gallery, :html => { multipart: true }, method: :patch do |f| %>
-<div class="row">
-  <div class="large-8 columns">
-    <%= f.text_field :name, :placeholder => 'gallery name' %>
-    <%= f.text_field :description, :placeholder => 'description' %>
-  </div>
-</div>
-<div class="row">
-  <div class="large-8 columns">
-    <%= f.label :pictures %>
-    <%= file_field_tag "images[]", type: :file, multiple: true %>
-  </div>
-</div>
-<div class="row">
-  <div class="large-8 columns">
-    <%= f.submit nil, :class => 'button small radius' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-  galleries_path, :class => 'button small radius' %>
-  </div>
+<h3 class="subheader">Ändra bildspel: <%= @gallery.name %></h3>
+<div id="maximage">
+  <% @pictures.each do |picture| %>
+    <%= image_tag (picture.image) %>
+  <% end %>
 </div>
 
-<% end %>
+<%= render 'form' %>
+<%= render 'thumb_menu' %>
+
+<%= link_to 'Visa bildspel', gallery_path, :class => 'button tiny radius' %>
+<script type="text/javascript" charset="utf-8">
   
-
-<%= link_to 'back to galleries', galleries_path, :class => 'button tiny radius' %>
+  
+$(function() {
+    $('#maximage').maximage({
+        backgroundSize: "contain",
+        cycleOptions: {
+            fx: 'fadeZoom',
+            //sync: false,
+            speed: 800,
+            timeout: 5000,
+            pause: 1
+        },
+        onFirstImageLoaded: function() {
+            jQuery('#maximage').fadeIn('fast');
+          }
+      
+    });
+});
+</script>

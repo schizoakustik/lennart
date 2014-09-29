@@ -39,6 +39,7 @@ class GalleriesController < ApplicationController
   
   def edit
     @gallery = Gallery.find(params[:id])
+    @pictures = @gallery.pictures
   end
   
   

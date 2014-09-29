@@ -96,9 +96,9 @@ class PicturesController < ApplicationController
     @gallery = Gallery.find(params[:gallery_id])
     @picture = @gallery.pictures.find(params[:id])
     @picture.destroy
-
+    
     respond_to do |format|
-      format.html { redirect_to @gallery }
+      format.html { redirect_to edit_gallery_path(@gallery) }
       format.js
     end
   end
