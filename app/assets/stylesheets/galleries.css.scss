@@ -11,20 +11,26 @@
           overflow:hidden;
 }
 
+.thumb {
+  width:100px;
+  
+}
+
 /* Other container */
 .contentContainer {
   position:absolute;
-  left:25%;
-    top:25%;
-    background:#888;
-    color:#fff;
-    font-family:sans-serif;
-    padding:20px;
-    margin-bottom:0px;
-    border-radius:5px;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    filter: alpha(opacity=50);
-    opacity:0.9;
+  left:0%;
+  bottom:0%;
+  width:100%;
+  background:#888;
+  color:#fff;
+  font-family:sans-serif;
+  padding:20px;
+  margin-bottom:0px;
+  border-radius:5px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity:0.8;
 }
 
 /* Center my loader */
@@ -44,15 +50,28 @@
     border:1px solid #ffffcc;
     float:left;
     margin:4px;
-    height:41px;
+    width: 100px;
+    height: 70px;
 }
+
+#cycle-nav ul li:hover .overlay {
+  opacity:1;
+}
+
+#cycle-nav ul li .overlay {
+  position: relative;
+  top: 0px;
+  width:100%;
+  height:100%;
+  background: rgba(200, 200, 200, .75);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
 #cycle-nav ul li a {
     float:left;
     margin:2px;
-    width:50px;
-}
-#cycle-nav ul li.activeSlide {
-    border:1px solid #FF8000;
+    
 }
 
 #menu-small {

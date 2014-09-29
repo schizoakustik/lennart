@@ -1,0 +1,25 @@
+<div class="contentContainer">
+  <h4>
+    <%= @gallery.name %>
+  </h4>
+  <h5>
+    <%= @gallery.description %>
+  </h5>
+  <div id="cycle-nav"><ul>
+    <% @pictures.each do |picture| %>
+    <li class="thumb" style="background:url('<%= (picture.image.thumb) %>') no-repeat">
+      <div class="overlay">
+        <%= link_to ''.html_safe, [picture.gallery, picture], method: :delete, class: 'ui-icon ui-icon-trash' %>
+      </div>
+    </li>
+    <% end %>
+    </ul></div>
+    <div class="row clearfix">
+  
+      <%= link_to 'add photos', edit_gallery_path, :class => 'button tiny radius' %>
+      <%= link_to 'hide menu', '#', :class => 'button tiny radius', :id => 'hide_menu' %>
+      <%= link_to 'back to galleries', galleries_path, :class => 'button tiny radius' %>
+  
+    </div>
+  </div>
+</div>

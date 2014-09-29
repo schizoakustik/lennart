@@ -1,0 +1,5 @@
+<li class="thumb" style="background:url('<%= (picture.image.thumb) %>') no-repeat">
+  <div class="overlay">
+    <%= link_to '&times;'.html_safe, [picture.gallery, picture], method: :delete, class: 'ui-icon ui-icon-trash' %>
+  </div>
+</li>

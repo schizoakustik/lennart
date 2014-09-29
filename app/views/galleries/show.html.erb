@@ -8,30 +8,14 @@
   
   <% end %>
 </div>
-
-<div class="contentContainer draggable">
-  <h4>
-    <%= @gallery.name %>
-  </h4>
-  <h5>
-    <%= @gallery.description %>
-  </h5>
-  <div id="cycle-nav"><ul></ul></div>
-    <div class="row clearfix">
-  
-      <%= link_to 'new gallery', new_gallery_path, :class => 'button tiny radius' %>
-      <%= link_to 'hide menu', '#', :class => 'button tiny radius', :id => 'hide_menu' %>
-  
-    </div>
-  </div>
-</div>
+<%= render 'thumb_menu' %>
 <div id="menu-small">
   <a href="#" class="ui-icon ui-icon-extlink">
 </div>
   
 <script type="text/javascript" charset="utf-8">
   
-  $('.draggable').draggable();
+  
 $(function() {
     $('#maximage').maximage({
         backgroundSize: "contain",
@@ -40,19 +24,14 @@ $(function() {
             //sync: false,
             speed: 800,
             timeout: 5000,
-            pause: 1,
-            prev: '#arrow_left',
-            next: '#arrow_right',
-            pager: '#cycle-nav ul',
-            pagerAnchorBuilder: function(idx, slide) {
-                var imgsrc = jQuery.Slides[idx].url;
-                return '<li><a href="#" rel="nofollow" class="thumb"><img src=' + imgsrc + ' width="150" /></a></li>';
-            }
+            pause: 1
         },
         onFirstImageLoaded: function() {
             jQuery('#maximage').fadeIn('fast');
-        }
+          }
+      
     });
+
     
     $('#hide_menu').click(function(e){
         e.preventDefault();

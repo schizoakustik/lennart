@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
+    @gallery = Gallery.find(params[:gallery_id])
     @picture = Picture.find(params[:id])
 
     respond_to do |format|
@@ -47,8 +48,9 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    @picture = Picture.new(picture_params)
-    @picture.save
+    @gallery = Gallery.find(params[:id])
+    @picture = @gallery.picture.create(picture_params)
+#    @picture.save
     
 #    Rails.logger.debug "DEBUG_PICTURES_CONTROLLER: " + params[:picture].inspect
     
@@ -96,7 +98,7 @@ class PicturesController < ApplicationController
     @picture.destroy
 
     respond_to do |format|
-      format.html { redirect_to gallery_pictures_url }
+      format.html { redirect_to @gallery }
       format.js
     end
   end

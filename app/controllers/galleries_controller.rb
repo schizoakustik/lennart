@@ -73,14 +73,19 @@ class GalleriesController < ApplicationController
   def update
     @gallery = Gallery.find(params[:id])
     
-    respond_to do |format|
-      if @gallery.update_attributes(gallery_params)
-        format.html { redirect_to @gallery, notice: 'gallery was successfully updated.' }
-        format.json { head :no_content }
+    if @gallery.update(gallery_params)
+        
+        if params[:images]
+          params[:images].each { |image|
+            @gallery.pictures.create(image: image)
+            Rails.logger.debug "DEBUG_GALLERIES_CONTROLLER: " + params[:images].inspect
+            }
+        end
+      flash[:notice] = "successfully updated gallery."
+        redirect_to @gallery
       else
-        format.html { render action 'edit' }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
+        flash.now[:alert] = "something went wrong."
+        render 'new'
     end
   end
   
