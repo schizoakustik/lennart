@@ -16,6 +16,11 @@
   
 }
 
+.panel {
+  opacity: .9;
+  background: #888;
+}
+
 /* Other container */
 .contentContainer {
   position:absolute;
@@ -29,7 +34,7 @@
   margin-bottom:0px;
   border-radius:5px;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
+  filter: alpha(opacity=80);
   opacity:0.8;
 }
 
@@ -82,10 +87,10 @@
 
 /* Overwrite Maximage's default background-size */
 div.mc-image {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
 }
 
 /* Other random styles */

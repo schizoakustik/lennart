@@ -9,15 +9,15 @@
     <% @pictures.each do |picture| %>
     <li class="thumb" style="background:url('<%= (picture.image.thumb) %>') no-repeat">
       <div class="overlay">
-        <%= link_to ''.html_safe, [picture.gallery, picture], method: :delete, class: 'ui-icon ui-icon-trash' %>
+        <%= link_to ''.html_safe, [picture.gallery, picture], method: :delete, class: 'ui-icon ui-icon-trash left' %>
       </div>
     </li>
     <% end %>
     </ul></div>
     <div class="row">
   
-      <%= link_to 'Tillbaka till bildspelen', galleries_path, :class => 'button tiny radius', :style => 'opacity:1;' %>
-  
+      <%= link_to 'Tillbaka till bildspelen', galleries_path, :class => 'button tiny radius', :style => 'opacity:1;' %><br/>
+      <%= link_to 'Visa bildspel', gallery_path, class: 'button tiny radius left' %>
     </div>
   </div>
 </div>

@@ -1,4 +1,8 @@
-<h3 class="subheader">Ändra bildspel: <%= @gallery.name %></h3>
+<div class="row">
+  <div class="large-4 columns panel">
+    <h4>Ändra bildspel: <%= @gallery.name %></h4>
+  </div>
+</div>
 <div id="maximage">
   <% @pictures.each do |picture| %>
     <%= image_tag (picture.image) %>
@@ -8,7 +12,6 @@
 <%= render 'form' %>
 <%= render 'thumb_menu' %>
 
-<%= link_to 'Visa bildspel', gallery_path, :class => 'button tiny radius' %>
 <script type="text/javascript" charset="utf-8">
   
   
