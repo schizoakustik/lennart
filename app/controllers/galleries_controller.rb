@@ -1,7 +1,8 @@
 class GalleriesController < ApplicationController
   
   def index
-    @galleries = Gallery.all
+    @user = Users.find(params[:id])
+    @galleries = @user.galleries
     
     respond_to do |format|
       format.html #index.html.erb

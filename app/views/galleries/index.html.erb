@@ -18,19 +18,19 @@
       <% @galleries.each do |gallery| %>
       <tr>
         <td>
-          <%= link_to gallery.name, gallery_path(gallery) %>
+          <%= link_to gallery.name, user_gallery_path(gallery) %>
         </td>
         <td>
           <%= gallery.description %>
         </td>
         <td>
-          <%= link_to ''.html_safe, edit_gallery_path(gallery), class: 'ui-icon ui-icon-pencil left' %>
-          <%= link_to ''.html_safe, gallery_path(gallery), method: :delete, class: 'ui-icon ui-icon-trash left' %>
+          <%= link_to ''.html_safe, edit_user_gallery_path(gallery), class: 'ui-icon ui-icon-pencil left' %>
+          <%= link_to ''.html_safe, user_gallery_path(gallery), method: :delete, class: 'ui-icon ui-icon-trash left' %>
         </td>
       </tr>
       <% end %>
     </table>
 
-    <%= link_to "Nytt bildspel", new_gallery_path, :class => 'button small radius' %>
+    <%= link_to "Nytt bildspel", new_user_gallery_path, :class => 'button small radius' %>
   </div>
 </div>

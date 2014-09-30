@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  Inloggad som <%= current_user.name %>. Är det inte du?
+  <%= link_to "Logga ut", destroy_user_session_path,:method => :delete %>
+<% else %>
+  
+<%= link_to "Logga in med din @backaskolan-mail", user_omniauth_authorize_path(:google_oauth2) %>
+<% end %>

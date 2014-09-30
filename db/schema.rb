@@ -14,17 +14,12 @@
 ActiveRecord::Schema.define(version: 20140925065857) do
 
   create_table "galleries", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "name"
     t.string   "description"
     t.string   "cover"
-    t.integer  "user_id"
-  end
-
-  create_table "photos", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "pictures", force: true do |t|
@@ -41,6 +36,10 @@ ActiveRecord::Schema.define(version: 20140925065857) do
 
   create_table "users", force: true do |t|
     t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

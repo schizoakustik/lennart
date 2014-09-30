@@ -21,6 +21,9 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'jquery-ui-rails'
 gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

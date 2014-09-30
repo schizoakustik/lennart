@@ -4,7 +4,6 @@ class PicturesController < ApplicationController
   def index
 
     @gallery = Gallery.find(params[:gallery_id])
-
     @pictures = @gallery.pictures
 
     respond_to do |format|
