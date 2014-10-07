@@ -1,27 +1,23 @@
-<table>
-  <thead>
-    <tr>
-      <th>Titel</th>
-      <th>Beskrivning</th>
-     
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @galleries.each do |gallery| %>
-      <tr>
-        <td><%= gallery.name %></td>
-        <td><%= gallery.description %></td>
-       
-        <td><%= link_to 'Visa', gallery %></td>
-        <td><%= link_to 'Ändra', edit_gallery_path(gallery) %></td>
-        <td><%= link_to 'Ta bort', gallery, method: :delete, data: { confirm: 'Är du säker?' } %></td>
-      </tr>
+<div class="row">
+  <h2>lennart <small> ...en bildspelsvisare</small></h2>
+</div>
+<div class="row">
+  <% @galleries.each do |gallery| %>
+      <div class="row">
+        <div class="large-2 small-2 column"><%= gallery.name %></div>
+        <div class="large-2 small-4 column"><%= gallery.description %></div>
+       <div class="large-4 small-6 column end">
+         <ul class="stack-for-small button-group radius">
+            <li><%= link_to 'Visa', gallery, class: 'button tiny' %></li>
+            <li><%= link_to 'Ändra', edit_gallery_path(gallery), class: 'button tiny' %></li>
+            <li><%= link_to 'Ta bort', gallery, method: :delete, data: { confirm: 'Är du säker?' }, class: 'button tiny' %></li>
+          </ul>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Nytt album', new_gallery_path %>
+</div>
+<div class="row">
+  <div class="large-2 column">
+    <%= link_to 'Nytt album', new_gallery_path, :class => 'button tiny radius' %>
+  </div>
+</div>

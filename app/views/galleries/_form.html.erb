@@ -3,21 +3,21 @@
 
 <div class="row">
   <div class="large-4 columns panel radius">
-    <%= f.text_field :name, :placeholder => 'gallery name' %>
-    <%= f.text_field :description, :placeholder => 'description' %>
+    <%= f.text_field :name, :placeholder => 'Namn på album' %>
+    <%= f.text_field :description, :placeholder => 'Beskrivning' %>
   </div>
 </div>
 <div class="row">
   <div class="large-4 columns panel radius">
-    <%= f.label :pictures %>
+    <%= f.label :pictures, "Foton" %>
     <%= file_field_tag "images[]", type: :file, multiple: true %>
   </div>
 </div>
 <div class="row">
   <div class="large-4 columns panel radius">
-    <%= f.submit nil, :class => 'button small radius' %>
+    <%= f.submit nil, :class => 'button tiny radius' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-  galleries_path, :class => 'button small radius' %>
+  galleries_path, :class => 'button tiny radius' %>
   </div>
 </div>
 
