@@ -1,22 +1,14 @@
 Rails.application.routes.draw do
-  resources :users do
-    resources :galleries do
-      resources :pictures
-    end
-  end
   
-  devise_for :users, skip: [:sessions], :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-  
-  devise_scope :user do
-    get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  resources :galleries do
+    resources :pictures
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'galleries#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

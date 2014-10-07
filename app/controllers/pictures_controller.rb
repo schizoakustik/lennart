@@ -3,25 +3,25 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
 
-    @gallery = Gallery.find(params[:gallery_id])
-    @pictures = @gallery.pictures
+  #  @gallery = Gallery.find(params[:gallery_id])
+  #  @pictures = @gallery.pictures
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pictures }
-    end
+   # respond_to do |format|
+   #   format.html # index.html.erb
+   #   format.json { render json: @pictures }
+   # end
   end
 
   # GET /pictures/1
   # GET /pictures/1.json
   def show
-    @gallery = Gallery.find(params[:gallery_id])
-    @picture = Picture.find(params[:id])
+   # @gallery = Gallery.find(params[:gallery_id])
+   # @picture = Picture.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @picture }
-    end
+    #respond_to do |format|
+    #  format.html # show.html.erb
+    #  format.json { render json: @picture }
+    #end
   end
 
   # GET /pictures/new
@@ -39,7 +39,6 @@ class PicturesController < ApplicationController
   # GET /pictures/1/edit
   def edit
     @gallery = Gallery.find(params[:gallery_id])
-
     @picture = @gallery.pictures.find(params[:id])
     # @picture = Picture.find(params[:id])
   end
@@ -47,9 +46,10 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    @gallery = Gallery.find(params[:id])
-    @picture = @gallery.picture.create(picture_params)
-#    @picture.save
+#    @gallery = Gallery.find(params[:id])
+ #   @picture = @gallery.picture.create(picture_params)
+    @picture = Picture.new(picture_params)
+    @picture.save
     
 #    Rails.logger.debug "DEBUG_PICTURES_CONTROLLER: " + params[:picture].inspect
     
@@ -74,7 +74,7 @@ class PicturesController < ApplicationController
   # PUT /pictures/1.json
   def update
 
-    @gallery = Gallery.find(params[:gallery_id])
+ #   @gallery = Gallery.find(params[:gallery_id])
 
     @picture = @gallery.pictures.find(params[:id])
 
@@ -93,7 +93,7 @@ class PicturesController < ApplicationController
   # DELETE /pictures/1.json
   def destroy
     @gallery = Gallery.find(params[:gallery_id])
-    @picture = @gallery.pictures.find(params[:id])
+    @picture = Picture.find(params[:id])
     @picture.destroy
     
     respond_to do |format|

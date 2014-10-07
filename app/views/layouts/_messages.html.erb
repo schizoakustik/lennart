@@ -1,9 +1,16 @@
 <%# Rails flash messages styled for Zurb Foundation %>
 <% flash.each do |name, msg| %>
   <% if msg.is_a?(String) %>
-    <div data-alert class="alert-box radius <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+    <div data-alert class="large-4 alert-box radius <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
       <%= content_tag :div, msg %>
       <a href="#" class="close">&times;</a>
     </div>
   <% end %>
 <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    setTimeout(function(){
+      $(".alert-box").remove();}, 5000);
+   })
+</script>

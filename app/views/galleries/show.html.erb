@@ -1,20 +1,12 @@
-
 <div id="maximage">
-<% @pictures.each do |picture| %>
-
-  
-<%= image_tag (picture.image) %>
-  
-  
+  <% @pictures.each do |picture| %>
+    <%= image_tag (picture.image) %>
   <% end %>
 </div>
 
-
 <%= link_to '', galleries_path, class: "ui-icon ui-icon-arrowthick-1-w" %>
-
   
 <script type="text/javascript" charset="utf-8">
-  
   
 $(function() {
     $('#maximage').maximage({
@@ -36,7 +28,6 @@ $(function() {
     $('#hide_menu').click(function(e){
         e.preventDefault();
       $('.contentContainer').hide( "drop", { direction: "down" }, "fast" );
-      
     });
   
 });
