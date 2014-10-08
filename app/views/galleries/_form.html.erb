@@ -2,22 +2,24 @@
 <%= form_for @gallery, :html => { :multipart => true } do |f| %>
 
 <div class="row">
-  <div class="large-4 columns panel radius">
+  <div class="small-8 large-4 columns panel radius">
     <%= f.text_field :name, :placeholder => 'Namn på album' %>
     <%= f.text_field :description, :placeholder => 'Beskrivning' %>
   </div>
 </div>
 <div class="row">
-  <div class="large-4 columns panel radius">
+  <div class="small-8 large-4 columns panel radius">
     <%= f.label :pictures, "Foton" %>
     <%= file_field_tag "images[]", type: :file, multiple: true %>
   </div>
 </div>
 <div class="row">
-  <div class="large-4 columns panel radius">
-    <%= f.submit nil, :class => 'button tiny radius' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-  galleries_path, :class => 'button tiny radius' %>
+  <div class="small-8 large-4 columns panel radius">
+    <ul class="stack-for-small button-group radius">
+      <li><%= f.submit nil, :class => 'button tiny' %></li>
+      <li><%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  galleries_path, :class => 'button tiny' %></li>
+    </ul>
   </div>
 </div>
 

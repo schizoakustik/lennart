@@ -3,9 +3,9 @@ class GalleriesController < ApplicationController
   def index
     @galleries = Gallery.all
     
-    Gallery.find_each do |gallery|
-      @cover = gallery.pictures.first
-      end
+ #   Gallery.find_each do |gallery|
+  #    @cover = gallery.pictures.first
+   #   end
     
     respond_to do |format|
       format.html #index.html.erb

@@ -1,12 +1,14 @@
-<div class="row panel radius">
-  <h2>lennart <small> ...en bildspelsvisare</small></h2>
+<div class="row">
+  <div class="small-8 large-6 panel radius">
+    <h2>lennart <small> ...en bildspelsvisare</small></h2>
+  </div>
 </div>
-<div class="row panel radius">
+<div class="row">
   <% @galleries.each do |gallery| %>
       <div class="row">
-        <div class="large-2 small-2 column" style="background:url('<%= @cover.image.thumb %>');"><%= gallery.name %></div>
+        <div class="large-2 small-4 column"><%= link_to (image_tag(gallery.pictures.first.image.thumb)), gallery, class: 'th' %></div>
         <div class="large-2 small-4 column"><%= gallery.description %></div>
-       <div class="large-4 small-6 column end">
+       <div class="large-8 small-8 column">
          <ul class="stack-for-small button-group radius">
             <li><%= link_to 'Visa', gallery, class: 'button tiny' %></li>
             <li><%= link_to 'Ändra', edit_gallery_path(gallery), class: 'button tiny' %></li>
@@ -16,8 +18,8 @@
       </div>
     <% end %>
 </div>
-<div class="row panel radius">
-  <div class="large-2 column end">
+<div class="row">
+  <div class="small-8 large-2">
     <%= link_to 'Nytt album', new_gallery_path, :class => 'button tiny radius' %>
   </div>
 </div>
