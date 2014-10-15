@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="small-8 large-6 panel radius">
+    <h2>lennart <small> ...en bildspelsvisare</small></h2>
+  </div>
+</div>
+<div class="row">
+ 
+    <ul class="clearing-thumbs small-block-grid-4">
+      <% @galleries.each do |gallery| %>
+       <div id="overlay-menu">
+         <li class="th" style="background:url('<%= gallery.pictures.first.image.thumb %>') no-repeat">
+		       <div class="overlay">
+             <span class="gallery-name panel"><%= gallery.name %></span>
+             <ul class="stack-for-small button-group radius">
+               <li><%= link_to 'Visa', gallery, class: 'button tiny' %></li>
+               <li><%= link_to 'Ändra', edit_gallery_path(gallery), class: 'button tiny' %></li>
+               <li><%= link_to 'Ta bort', gallery, method: :delete, data: { confirm: 'Är du säker?' }, class: 'button tiny' %></li>
+             </ul>
+           </li>
+         </div>
+        </div>
+      <% end %>
+    </ul>
+</div>
+<div class="row">
+  <div class="small-8 large-2">
+    <%= link_to 'Nytt album', new_gallery_path, :class => 'button tiny radius' %>
+  </div>
+</div>

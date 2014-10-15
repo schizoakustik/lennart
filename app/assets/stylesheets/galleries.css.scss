@@ -43,6 +43,43 @@
     display:none;
 }
 
+.clearing-thumbs li.th {
+  width:250px;
+  height:250px;
+  margin: 5px;
+}
+
+#overlay-menu {
+  float: left;
+  margin-bottom:20px;
+}
+
+#overlay-menu .overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(200, 200, 200, .75);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+#overlay-menu .overlay ul {
+  position: relative;
+  top: 133px;
+  left: 18px;
+}
+
+#overlay-menu li:hover .overlay {
+  opacity: 1;
+}
+
+.gallery-name {
+  display: block;
+  position:relative;
+  top: 30px;
+  width:100%;
+  text-shadow: 1px 1px #888;
+}
+
 /*I want to style my pager*/
 #cycle-nav {
     float:left;
