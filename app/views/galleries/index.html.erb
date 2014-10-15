@@ -4,8 +4,7 @@
   </div>
 </div>
 <div class="row">
- 
-    <ul class="clearing-thumbs small-block-grid-4">
+  <ul class="clearing-thumbs small-block-grid-4">
       <% @galleries.each do |gallery| %>
        <div id="overlay-menu">
          <li class="th" style="background:url('<%= gallery.pictures.first.image.thumb %>') no-repeat">
@@ -16,9 +15,9 @@
                <li><%= link_to 'Ändra', edit_gallery_path(gallery), class: 'button tiny' %></li>
                <li><%= link_to 'Ta bort', gallery, method: :delete, data: { confirm: 'Är du säker?' }, class: 'button tiny' %></li>
              </ul>
-           </li>
-         </div>
-        </div>
+           </div>
+         </li>
+       </div>
       <% end %>
     </ul>
 </div>
