@@ -1,6 +1,5 @@
 README
 ==
-Rails > 4
-Paperclip
+A fullscreen image viewer using Rails 4, Carrierwave and Thin.
 
-etc.
+In swedish.
